@@ -60,8 +60,6 @@ public class FenetreAjoutUti extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						String ajoututilisateur="INSERT INTO utilisateurs (nomUtilisateur) VALUES ('"+TextNom.getText()+"')";
 						
-						
-					
 						try {
 							// parcours et verification
 							String parcours = "SELECT * FROM utilisateurs";
@@ -87,11 +85,10 @@ public class FenetreAjoutUti extends JDialog {
 							Connection con1 = BDD.connect();
 							Statement stmt;
 							stmt = con1.createStatement();
-							if(exist=false){
+							if(exist==false){
 								int up = stmt.executeUpdate(ajoututilisateur);
 								setVisible(false);
 							}
-							
 							
 						} catch (SQLException e1) {
 							// TODO Auto-generated catch block
@@ -107,9 +104,15 @@ public class FenetreAjoutUti extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+					}
+				});
 				cancelButton.setBounds(248, 227, 84, 23);
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
+				setVisible(false);
 			}
 			{
 				JLabel lblNewLabel = new JLabel("Nom");

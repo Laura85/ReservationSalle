@@ -102,7 +102,7 @@ public class FenetreModifUti extends JDialog {
 							Connection con1 = BDD.connect();
 							Statement stmt;
 							stmt = con1.createStatement();
-							if(exist=false){
+							if(exist==false){
 								int up = stmt.executeUpdate(modifUti);
 								setVisible(false);
 							}
@@ -124,6 +124,11 @@ public class FenetreModifUti extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+					}
+				});
 				cancelButton.setBounds(248, 5, 74, 23);
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
