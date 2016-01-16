@@ -82,8 +82,8 @@ public class Accueil extends JFrame {
 		sl_contentPane.putConstraint(SpringLayout.EAST, btnGestionDesCrneaux, 0, SpringLayout.EAST, btnGestionDesRservations);
 		btnGestionDesCrneaux.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//FenetreCreneaux jcreneau = new FenetreCreneaux();
-				//jcreneau.setVisible(true);
+				ajouterCreneau jcreneau = new ajouterCreneau();
+				jcreneau.setVisible(true);
 			}
 		});
 		contentPane.add(btnGestionDesCrneaux);
