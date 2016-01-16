@@ -28,7 +28,7 @@ public class FenetreAjoutUti extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			FenetreAjoutUti dialog = new FenetreAjoutUti();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -36,7 +36,7 @@ public class FenetreAjoutUti extends JDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
 	 * Create the dialog.
@@ -73,7 +73,7 @@ public class FenetreAjoutUti extends JDialog {
 							while (resultats.next()){
 								String nom = resultats.getString("nomUtilisateur");
 								if ((nom2.toUpperCase()).equals(nom.toUpperCase())){
-									JOptionPane.showMessageDialog(null, "Erreur le nom existe déjà");
+									JOptionPane.showMessageDialog(null, "Erreur le nom existe dï¿½jï¿½");
 									exist= true;
 								}else{
 									//System.out.println(conto[i][1]);

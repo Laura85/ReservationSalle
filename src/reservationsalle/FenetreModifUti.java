@@ -29,7 +29,7 @@ public class FenetreModifUti extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			Object o1 = null;
 			FenetreModifUti dialog = new FenetreModifUti(o1);
@@ -38,7 +38,7 @@ public class FenetreModifUti extends JDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
 	 * Create the dialog.
@@ -90,7 +90,7 @@ public class FenetreModifUti extends JDialog {
 							while (resultats.next()){
 								String nom = resultats.getString("nomUtilisateur");
 								if ((nom2.toUpperCase()).equals(nom.toUpperCase())){
-									JOptionPane.showMessageDialog(null, "Erreur le nom existe déjà");
+									JOptionPane.showMessageDialog(null, "Erreur le nom existe dï¿½jï¿½");
 									exist= true;
 								}else{
 									//System.out.println(conto[i][1]);

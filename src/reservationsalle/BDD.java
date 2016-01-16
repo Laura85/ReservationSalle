@@ -1,4 +1,5 @@
 package reservationsalle;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -6,11 +7,11 @@ import com.mysql.jdbc.Connection;
 
 public class BDD {
 	public static Connection connect(){
-		String url= "jdbc:mysql://localhost:3306/reservationsalle"+
+		String url= "jdbc:mysql://localhost:3307/reservationsalle"+
 				"?verifyServerCertificate=false"+
 				"&useSSL=true";
 		String login = "root";
-		String passwd = "Tours37200";
+		String passwd = "password";
 		Connection con= null;
 		
 		

@@ -34,7 +34,7 @@ public class FenetreReservation extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,7 +45,7 @@ public class FenetreReservation extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -55,7 +55,7 @@ public class FenetreReservation extends JFrame {
 		
 		DefaultTableModel model = remplirTable();
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 509, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -160,7 +160,7 @@ public class FenetreReservation extends JFrame {
 	      String cont[][]=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD_Laura.connect();
+			con = BDD.connect();
 			String queryString = "SELECT COUNT(*) as nb FROM reservations ;";
 		    Statement stm = (Statement) con.createStatement();
 		    ResultSet rs = stm.executeQuery(queryString);

@@ -37,7 +37,7 @@ public class FenetreUtilisateurs extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -48,13 +48,13 @@ public class FenetreUtilisateurs extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
 	 */
 	public FenetreUtilisateurs() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -90,7 +90,7 @@ public class FenetreUtilisateurs extends JFrame {
 				btnSupprimer.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						int ligneSelectionne = table.getSelectedRow();
-						//on récupére la valeur de la première colonne de la ligne sélectionné
+						//on rï¿½cupï¿½re la valeur de la premiï¿½re colonne de la ligne sï¿½lectionnï¿½
 						table.getValueAt(ligneSelectionne, 0);
 						System.out.println(table.getValueAt(ligneSelectionne, 0));
 						String suppUti = "DELETE FROM utilisateurs WHERE idUtilisateur ='"+table.getValueAt(ligneSelectionne, 0)+"'";
@@ -113,9 +113,9 @@ public class FenetreUtilisateurs extends JFrame {
 				btnModifier = new JButton("Modifier");
 				btnModifier.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						// récupération de la ligne selectionnée
+						// rï¿½cupï¿½ration de la ligne selectionnï¿½e
 						int ligneSelectionne = table.getSelectedRow();
-						//on récupére la valeur de la première colonne de la ligne sélectionné
+						//on rï¿½cupï¿½re la valeur de la premiï¿½re colonne de la ligne sï¿½lectionnï¿½
 						Object o1 = table.getValueAt(ligneSelectionne, 0);
 						System.out.println(table.getValueAt(ligneSelectionne, 0));
 						
@@ -135,7 +135,7 @@ public class FenetreUtilisateurs extends JFrame {
 
 	static DefaultTableModel remplirTable(){
 
-		String[] colo = {"Numéro", "Nom"};
+		String[] colo = {"Numï¿½ro", "Nom"};
 
 		String requete1 = "SELECT COUNT(*) AS compt FROM utilisateurs";
 		String requete = "SELECT * FROM utilisateurs";
