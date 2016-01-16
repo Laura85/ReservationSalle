@@ -160,7 +160,7 @@ public class FenetreReservation extends JFrame {
 	      String cont[][]=null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			String queryString = "SELECT COUNT(*) as nb FROM reservations ;";
 		    Statement stm = (Statement) con.createStatement();
 		    ResultSet rs = stm.executeQuery(queryString);

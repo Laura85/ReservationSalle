@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Connection;
 
-public class BDD {
+public class BDD_General {
 	public static Connection connect(){
 		String url= "jdbc:mysql://localhost:3307/reservationsalle"+
 				"?verifyServerCertificate=false"+

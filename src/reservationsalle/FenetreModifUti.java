@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import reservationsalle.BDD;
+import reservationsalle.BDD_General;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -80,7 +80,7 @@ public class FenetreModifUti extends JDialog {
 						try {
 							// parcours et verification
 							String parcours = "SELECT * FROM utilisateurs";
-							Connection con = BDD.connect();
+							Connection con = BDD_General.connect();
 							Statement stmt1 = con.createStatement();
 							ResultSet resultats = null;
 							resultats = stmt1.executeQuery(parcours);
@@ -99,7 +99,7 @@ public class FenetreModifUti extends JDialog {
 							}
 							
 							String modifUti = "UPDATE utilisateurs SET nomUtilisateur = '"+textModifUti.getText()+"' WHERE idUtilisateur = "+o1+"";
-							Connection con1 = BDD.connect();
+							Connection con1 = BDD_General.connect();
 							Statement stmt;
 							stmt = con1.createStatement();
 							if(exist==false){

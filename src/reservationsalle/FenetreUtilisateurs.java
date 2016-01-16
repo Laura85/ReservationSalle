@@ -24,7 +24,7 @@ import javax.swing.Action;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
-import reservationsalle.BDD;
+import reservationsalle.BDD_General;
 
 public class FenetreUtilisateurs extends JFrame {
 
@@ -94,7 +94,7 @@ public class FenetreUtilisateurs extends JFrame {
 						table.getValueAt(ligneSelectionne, 0);
 						System.out.println(table.getValueAt(ligneSelectionne, 0));
 						String suppUti = "DELETE FROM utilisateurs WHERE idUtilisateur ='"+table.getValueAt(ligneSelectionne, 0)+"'";
-						Connection con1 = BDD.connect();
+						Connection con1 = BDD_General.connect();
 						Statement stmt;
 						try {
 							stmt = con1.createStatement();
@@ -145,7 +145,7 @@ public class FenetreUtilisateurs extends JFrame {
 		int nbUti=0;
 		
 		try {
-			Connection con1 = BDD.connect();
+			Connection con1 = BDD_General.connect();
 			Statement stmt;
 		
 			stmt = con1.createStatement();
@@ -155,7 +155,7 @@ public class FenetreUtilisateurs extends JFrame {
 			
 			nbUti = resultat1.getInt("compt");
 			String [][] conto = new String[nbUti][2];
-			Connection con = BDD.connect();
+			Connection con = BDD_General.connect();
 
 			Statement stmt1 = con.createStatement();
 			ResultSet resultats = null;

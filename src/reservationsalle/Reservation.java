@@ -35,7 +35,7 @@ public class Reservation {
 	    int idDa= -1;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			String tab[] = creneau.split(" - ");
 			String queryString = "SELECT idCreneau as nb FROM creneaux WHERE heureDebut='"+tab[0]+"' AND heureFin='"+tab[1]+"';";
 		    Statement stm = (Statement) con.createStatement();
@@ -87,7 +87,7 @@ public class Reservation {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			String queryString = "SELECT idSalle,idCreneau,idDate,idUtilisateur FROM reservations ;";
 		    Statement stm = (Statement) con.createStatement();
 		    ResultSet rs = stm.executeQuery(queryString);
@@ -111,7 +111,7 @@ public class Reservation {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			String queryString = "DELETE FROM reservations WHERE idReservation ="+this.id+" ;";
 		    Statement stm = (Statement) con.createStatement();
 		    stm.executeUpdate(queryString);
@@ -128,7 +128,7 @@ public class Reservation {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			if(this.id==-1){
 				if(this.isFree()){
 					String queryString = "INSERT INTO reservations(idSalle,idUtilisateur,idCreneau,idDate) VALUES ("+this.idSalle+","+this.idUser+","+this.idCreneau+","+this.idDate+");";
@@ -164,7 +164,7 @@ public class Reservation {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			String queryString = "SELECT * FROM reservations WHERE idSalle="+this.idSalle+" AND idCreneau="+this.idCreneau+" AND idDate="+this.idDate+";";
 		    Statement stm = (Statement) con.createStatement();
 		    ResultSet rs = stm.executeQuery(queryString);

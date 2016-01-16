@@ -56,7 +56,7 @@ public class FormulaireReservation extends JDialog {
 	    String salle[] = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			con = BDD.connect();
+			con = BDD_General.connect();
 			
 			String queryString = "SELECT COUNT(*) as nb FROM creneaux ;";
 		    Statement stm = (Statement) con.createStatement();
@@ -152,7 +152,7 @@ public class FormulaireReservation extends JDialog {
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				con = BDD.connect();
+				con = BDD_General.connect();
 				String queryString = "SELECT sa.nomSalle, cr.heureDebut, cr.heureFin, da.date,ut.nomUtilisateur FROM reservations re, salles sa, creneaux cr, date da, utilisateurs ut WHERE re.idSalle=sa.idSalle AND re.idCreneau=cr.idCreneau AND re.idDate=da.idDate AND re.idUtilisateur=ut.idUtilisateur AND idReservation="+reservation.id+";";
 			    Statement stm = (Statement) con.createStatement();
 			    ResultSet rs = stm.executeQuery(queryString);
