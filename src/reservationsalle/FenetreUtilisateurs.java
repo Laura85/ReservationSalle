@@ -151,7 +151,7 @@ public class FenetreUtilisateurs extends JFrame {
 
 		DefaultTableModel modele;
 		modele = new DefaultTableModel();
-		int nbUti=0;
+		int nbUti=0; 
 
 		try {
 			Connection con1 = BDD_General.connect();
