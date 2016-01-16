@@ -144,7 +144,7 @@ public class FenetreUtilisateurs extends JFrame {
 
 	static DefaultTableModel remplirTable(){
 
-		String[] colo = {"Numï¿½ro", "Nom"};
+		String[] colo = {"Numéro", "Nom"};
 
 		String requete1 = "SELECT COUNT(*) AS compt FROM utilisateurs";
 		String requete = "SELECT * FROM utilisateurs";
